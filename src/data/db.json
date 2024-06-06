@@ -391,6 +391,18 @@
       "price": 10,
       "categoryId": 1,
       "id": 63
+    },
+    {
+      "name": "product 1 ",
+      "price": 5,
+      "categoryId": 2,
+      "id": 64
+    },
+    {
+      "name": "product 1",
+      "price": 23,
+      "categoryId": 2,
+      "id": 65
     }
   ]
 }
