@@ -6,6 +6,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "types": ["vitest/globals"],
+    //do not have to import describe , it or ... every time.
+    
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -20,6 +22,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "tests", "src/environment.d.ts", "__test__"],
+  "include": ["src", "tests", "src/environment.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
