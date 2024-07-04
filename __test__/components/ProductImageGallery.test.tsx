@@ -1,19 +1,20 @@
 import { render, screen } from "@testing-library/react";
-import ProductDetailPage from "../../src/pages/ProductDetailPage";
 import ProductImageGallery from "../../src/components/ProductImageGallery";
 
-describe("image renderer test", () => {
-  it("that when the arr is empty it renders nothing ", () => {
+describe("the image Gallery Product component", () => {
+  it("should render null when the array of imageUrl is empty", () => {
     const { container } = render(<ProductImageGallery imageUrls={[]} />);
+
     expect(container).toBeEmptyDOMElement();
   });
-  it("that when the arr is full it renders the e ", () => {
-    const imageUrls = ["test1", "test2", "test3"];
-     render(<ProductImageGallery imageUrls={imageUrls} />);
-    const allImages = screen.getAllByRole("img");
-    expect(allImages).toHaveLength(3);
-    imageUrls.map((item, index) => {
-      expect(allImages.at(index)).toHaveAttribute("src", item);
+  it("should render two image when the array of imageUrl is NOT empty", () => {
+    const ImageSourceArray = ["one", "two"];
+    render(<ProductImageGallery imageUrls={ImageSourceArray} />);
+    const images = screen.getAllByRole("img");
+    expect(images).toHaveLength(2);
+    ImageSourceArray.map((item, index) => {
+      expect(images.at(index)).toBeInTheDocument();
+      expect(images.at(index)).toHaveAttribute("src", item);
     });
   });
 });
